@@ -63,8 +63,16 @@ namespace PetStore_v2
             tiger.Bite("Chris");
             tiger.Bite("Chris");
 
+            var bear = new Bear("Yogi", "Brown");
+            // bear.NumberOfFishEaten = 5; // Won't work bc this property is { get; private set; } Have to go through the class to change this property. // 
+            // See the EatFish() method in the Bear class to see how to manipulate it //
+            bear.EatFish(5);
+            bear.EatFish(5);
+            bear.EatFish(5);
+            bear.EatFish(-5); // In this case, this what we don't want to allow. // In this case, we want rules around how many fish this can eat, and if we exposed it publicly, we would lose the control to create and manipulate these rules. In this case, we don't want this property to be able to move backwards.  // - The fish vomited 5 fish right back up // 
+            // We want people to knoiw how many fish this bear has eaten, but don't want to allow them to manipulate however they want. In this case they can only add to how many fish the bear has eaten. //
+            // The they in this case, is you in the future. //
 
-            
         }
     }
 }

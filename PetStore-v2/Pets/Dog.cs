@@ -34,12 +34,13 @@ namespace PetStore_v2.Pets
     // Class names are capitalized //
     class Dog // Implicitly internal unless specified //
     {
-        // Properties // - Usually defined at the top of the class // - Ways to store bits of info about a thing //
+        // Properties // - Usually defined at the top of the class // - Ways to store bits of info about a thing // - For exposing stuff
         //- Access Modifier// - Type of property // - Name of property // - { get; set; }
         // -- Private: Only things in this class can use it // Private is the implcit or default access modifier //
         // -- Public: Everything that can see the class can access it //
         // --Internal: Anything in this project can access it // - useful for writing tools for other devs to use. If you want to hide stuff from other devs for you //
         // --Protected: anything that inherits from me can access //
+        // - Things that are info about me, but stuff other that people may want to see or update //
 
         //Proprties
         //access modifier, type, name
@@ -52,7 +53,9 @@ namespace PetStore_v2.Pets
         // specialized kind of method
         // access modifier
         // return type and name method combined into one. Has to be the same as the name of the type you are constructing
-
+        // Constructors are made to take information. 
+        // Once we take this information in on our constructor, it becomes a requirement of creating a new instance of that class.
+        // A lot of time they are used for what the bare minimum requirements are for creating a copy of that class
         // Constructor, Constructor Method //
         public Dog(string name, short weight, string size)
         {

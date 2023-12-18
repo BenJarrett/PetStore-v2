@@ -13,7 +13,10 @@ namespace PetStore_v2.Pets
         public int NumberOfKills { get; set; }
         public short Speed { get; set; }
 
-        // Fields //
+
+
+        // Fields // - For internal stuff
+        // - Things that are for me that I need in order to do my job. But don't neccesarily need other people to know about //
         // - Used to stored data inside the class, but shouldn't be exposed externally to other people //
         // - Things we want to keep internally // 
         // Inplicitly private //
@@ -25,16 +28,21 @@ namespace PetStore_v2.Pets
         // No getter or setter. Almost works more like a variable //
         // Fields are instance level by default, unless you specifiy that it is static //
 
-                  // USE CASE OF STATIC FIELD //
+        // USE CASE OF STATIC FIELD //
         /*        - static int _numberOfBites;
                   - Then created 5 different Tigers and made them all bite people, we could use this to track how many bites there were across our entire population of Tigers */
-                  // USE CASE OF STATIC FIELD //
+        // USE CASE OF STATIC FIELD //
+        // Fields //
 
         int _numberOfBites;
 
         public void Bite(string handlerName)
         {
             _numberOfBites++;
+            if (_numberOfBites > 5)
+            {
+                Console.WriteLine("This is a bitey Tiger");
+            }
             Console.WriteLine($"{Name} the tiger just bit {handlerName}! That's the {_numberOfBites} time.");
         }
     }
